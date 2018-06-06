@@ -8,7 +8,8 @@ one_video() {
   --video /data/${video}.mp4\
   --write_video /data/op_videos/${video}.avi\
   --write_keypoint_json /data/op_poses\
-  --face --hand --no_display
+  # --face --hand  enabling this will increase 30% running time
+  --no_display
 }
 # https://unix.stackexchange.com/questions/271134/how-to-make-a-function-available-to-the-command-parallel-gnu
 export -f one_video
