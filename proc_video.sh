@@ -13,7 +13,7 @@ one_mp4() {
     video=$(basename $1 .mp4)
     video_dst=fps10/$1
     echo $video_dst
-    ffmpeg -y -i $1 -s 640x480 -r 10 -c:v libx264 $video_dst
+    ffmpeg -y -i $1 -s 640x480 -an -r 10 -c:v libx264 $video_dst
 }
 export -f one_mp4
 
