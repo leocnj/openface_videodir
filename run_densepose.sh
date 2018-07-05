@@ -17,7 +17,7 @@ export -f one_video
 data_dir=/workspace/lchen/works/data/engagement/fps10
 root=$1    # train vs validation
 # run docker in a daemon mode
-docker run --runtime=nvidia --name openpose --rm -v ${data_dir}/${root}:/data -d -it garyfeng/docker-openpose:latest
+docker run --runtime=nvidia --name openpose --rm -v ${data_dir}/${root}:/data -d -it garyfeng/densepose:latest
 cd ${data_dir}/${root}
 ls *.mp4 > videos.tmp
 parallel -j 1 one_video < videos.tmp
